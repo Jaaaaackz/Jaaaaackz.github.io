@@ -1,0 +1,34 @@
+/* ��̬���񱳾����� */
+#page-header.full_page, post-bg {
+    background: #0a0c15; /* ��ɫ������ǿ�Ա� */
+    position: relative;
+    overflow: hidden;
+}
+
+/* ����ͼ������ */
+#page-header::before {
+    content: "";
+    position: absolute;
+    width: 200vmax; /* ���ӿڳߴ�ȷ������ */
+    height: 200vmax;
+    background: linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 40px 40px; /* �����ܶ� */
+    animation: grid-move 20s linear infinite;
+}
+
+/* ������������ */
+@keyframes grid-move {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ��꽻��Ч�� */
+#page-header:hover::before {
+    background-size: 30px 30px; /* ����ʱ�������� */
+    transition: background-size 0.3s ease;
+}
